@@ -10,7 +10,9 @@
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint **/*.ts",
-    "test": "jest --testTimeout 10000"
+    "test": "jest --testTimeout 10000",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -32,7 +34,8 @@
     "@actions/artifact": "^0.5.1",
     "@actions/core": "^1.2.6",
     "@actions/glob": "^0.1.0",
-    "@actions/io": "^1.0.2"
+    "@actions/io": "^1.0.2",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
@@ -49,5 +52,6 @@
     "prettier": "^2.0.4",
     "ts-jest": "^25.3.1",
     "typescript": "^3.8.3"
-  }
+  },
+  "snyk": true
 }
