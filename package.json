@@ -10,7 +10,9 @@
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint **/*.ts",
-    "test": "jest --testTimeout 10000"
+    "test": "jest --testTimeout 10000",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -29,25 +31,27 @@
   },
   "homepage": "https://github.com/actions/upload-artifact#readme",
   "dependencies": {
-    "@actions/artifact": "^0.5.1",
-    "@actions/core": "^1.2.6",
+    "@actions/artifact": "^2.1.7",
+    "@actions/core": "^1.9.1",
     "@actions/glob": "^0.1.0",
-    "@actions/io": "^1.0.2"
+    "@actions/io": "^1.0.2",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "@types/node": "^13.11.1",
-    "@typescript-eslint/parser": "^2.27.0",
+    "@typescript-eslint/parser": "^4.0.0",
     "@zeit/ncc": "^0.22.1",
     "concurrently": "^5.1.0",
-    "eslint": "^7.4.0",
+    "eslint": "^9.0.0",
     "eslint-plugin-github": "^4.1.1",
-    "eslint-plugin-jest": "^23.8.2",
-    "glob": "^7.1.6",
-    "jest": "^26.6.3",
-    "jest-circus": "^26.1.0",
+    "eslint-plugin-jest": "^24.0.0",
+    "glob": "^9.0.0",
+    "jest": "^30.0.0",
+    "jest-circus": "^30.0.0",
     "prettier": "^2.0.4",
     "ts-jest": "^25.3.1",
     "typescript": "^3.8.3"
-  }
+  },
+  "snyk": true
 }
